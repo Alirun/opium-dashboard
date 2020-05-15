@@ -1,0 +1,137 @@
+$headerSidePadding: 1rem;
+
+$sizes: (
+	defaultRadiusPx: 2px,
+);
+
+$colors: (
+	red: #ff5a5a,
+	blue1: #197cd8,
+	blue1Hover: rgba(45, 142, 233, 0.9),
+	blue2: #56ccf2,
+	blue3: #6ea9e4,
+	blue4: #bbebfa,
+	white: #fff,
+	whiteOpaque: rgba(255, 255, 255, 0.75),
+	whiteOpaque1: rgba(255, 255, 255, 0.4),
+	blackOpaque: rgba(0, 0, 0, 0.1),
+	black: rgb(0, 0, 0),
+	black2: #353538,
+	orange: #eabb2a,
+	green: #0dbc7d,
+	green2: #36d69c,
+	green3: #b3f3dc,
+	gray1: #1e1e22,
+	gray2: #4b4b4e,
+	gray3: #78787a,
+	gray4: #a5a5a7,
+	gray5: #ededf0,
+	gray6: #f3f3f4,
+	gray6Opaque: rgba(237, 237, 240, 0.5),
+	gray7: #ebebec,
+	gray8: #d2d2d3,
+	gray6-30: rgba(243, 243, 244, 0.3),
+	greyColor: #ededf0,
+);
+
+$breakpoints: (
+	mobileS: 320px,
+	mobileM: 375px,
+	mobileL: 425px,
+	mobileXL: 570px,
+	tablet: 768px,
+	laptopS: 1024px,
+	laptopM: 1280px,
+	laptopL: 1366px,
+	laptop: 1440px,
+	desktopM: 1920px,
+	desktopL: 2560px
+);
+
+$font-sizes: (
+	xss: 0.7rem,
+	xs: 0.9rem,
+	s: 1rem,
+	m: 1.2rem,
+	l: 1.4rem,
+	xl: 1.8rem
+);
+
+@function size($size-name) {
+	@return map-get($sizes, $size-name);
+}
+
+@function color($color-name) {
+	@return map-get($colors, $color-name);
+}
+
+@function breakpoint($point-size) {
+	@return map-get($breakpoints, $point-size);
+}
+
+@function fz($font-size) {
+	@return map-get($font-sizes, $font-size);
+}
+
+@mixin font {
+	font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+	font-size: fz(s);
+	font-weight: 400;
+}
+
+@mixin desktop-up {
+	@media screen and (max-width: breakpoint(desktopL)) {
+		@content;
+	}
+}
+@mixin desktopM-up {
+	@media screen and (max-width: breakpoint(desktopM)) {
+		@content;
+	}
+}
+@mixin laptop-up {
+	@media screen and (max-width: breakpoint(laptop)) {
+		@content;
+	}
+}
+@mixin laptopL-up {
+	@media screen and (max-width: breakpoint(laptopL)) {
+		@content;
+	}
+}
+@mixin laptopM-up {
+	@media screen and (max-width: breakpoint(laptopM)) {
+		@content;
+	}
+}
+@mixin laptopS-up {
+	@media screen and (max-width: breakpoint(laptopS)) {
+		@content;
+	}
+}
+@mixin tablet-up {
+	@media screen and (max-width: breakpoint(tablet)) {
+		@content;
+	}
+}
+@mixin mobileXL-up {
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		@content;
+	}
+}
+@mixin mobile-up {
+	@media screen and (max-width: breakpoint(mobileL)) {
+		@content;
+	}
+}
+@mixin mobileS-up {
+	@media screen and (max-width: breakpoint(mobileS)) {
+		@content;
+	}
+}
+@mixin landscape-up {
+	@media screen and (max-device-height: breakpoint(mobileL)) and (orientation: landscape) {
+		@content;
+	}
+}
