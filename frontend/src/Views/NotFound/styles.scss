@@ -1,0 +1,18 @@
+@import '../../Styles/constants.scss';
+
+.wrapper {
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+};
+
+.code {
+  font-size: 4 * fz(xl);
+}
+
+.text {
+  font-size: 2 * fz(xl)
+}

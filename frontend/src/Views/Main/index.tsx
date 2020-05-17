@@ -3,14 +3,14 @@ import Loading from 'react-loading'
 
 import './styles.scss'
 
-type MainProps = {}
+type Props = {}
 
-type MainState = {
+type State = {
   loading: boolean
 }
 
-class Main extends Component<MainProps, MainState> {
-  constructor (props: MainProps) {
+class Main extends Component<Props, State> {
+  constructor (props: Props) {
     super(props)
     this.state = {
       loading: true
