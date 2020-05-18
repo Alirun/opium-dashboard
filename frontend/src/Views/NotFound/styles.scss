@@ -1,6 +1,6 @@
 @import '../../Styles/constants.scss';
 
-.wrapper {
+.notFoundWrapper {
 	display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,10 +9,10 @@
   min-width: 100vw;
 };
 
-.code {
+.notFoundCode {
   font-size: 4 * fz(xl);
 }
 
-.text {
+.notFoundText {
   font-size: 2 * fz(xl)
 }

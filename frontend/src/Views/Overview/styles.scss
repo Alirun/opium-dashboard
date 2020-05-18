@@ -1,0 +1,17 @@
+@import '../../Styles//constants.scss';
+
+.overviewWrapper {
+	display: grid;
+	min-height: 100vh;
+	grid-template-areas: 'routes body';
+	grid-template-columns: 0.1fr 0.9fr;
+}
+
+.overviewBody {
+	background-color: color('gray5');
+	grid-area: body;
+}
+
+.overviewRoutes {
+	grid-area: routes;
+}
