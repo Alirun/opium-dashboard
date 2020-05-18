@@ -26,17 +26,17 @@ class NavRoutes extends Component<Props, State> {
           image={Logo}
           title="Contemplative Reptile"
         />
-      {Links.map(({ to, title }) => (
-        <Link
-          href={to}
-          className={`navLink ${additionalClassName} ${activeTab === to && 'active'}`}
-          key={title}
-          underline='none'
-        >
-          {title}
-        </Link>
-      ))}
-    </div>
+        {Links.map(({ to, title }) => (
+          <Link
+            href={to}
+            className={`navLink ${additionalClassName} ${activeTab === to && 'active'}`}
+            key={title}
+            underline='none'
+          >
+            {title}
+          </Link>
+        ))}
+      </div>
     )
   }
 }
