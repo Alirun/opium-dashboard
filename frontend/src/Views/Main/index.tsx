@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import Loading from 'react-loading'
 
+// Components
+import WalletController from '../../Components/WalletController/'
+
+// Services
+import apiStore from '../../Services/Api/Api.store'
+
 import './styles.scss'
 
 type MainProps = {}
@@ -17,7 +23,8 @@ class Main extends Component<MainProps, MainState> {
     }
   }
   
-  componentDidMount () {
+  async componentDidMount () {
+    await apiStore.init()
     this.setState({
       loading: false
     })
@@ -38,6 +45,8 @@ class Main extends Component<MainProps, MainState> {
     return (
       <div className='Main'>
         Hello world!
+
+        <WalletController />
       </div>
     )
   }
