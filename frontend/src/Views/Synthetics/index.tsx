@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavRoutes from '../../Components/NavRoutes'
+import LoginHeader from '../../Components/LoginHeader'
 
 import './styles.scss'
 
@@ -27,6 +28,7 @@ class Overview extends Component<Props, State> {
     return (
       <div className='overviewWrapper'>
         <NavRoutes activeTab='/synthetics' additionalClassName='overviewRoutes' />
+        <LoginHeader additionalClassName='overviewHeader' />
         <div className='overviewBody'></div>
       </div>
     )

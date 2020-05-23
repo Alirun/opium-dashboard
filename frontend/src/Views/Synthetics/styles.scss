@@ -2,9 +2,13 @@
 
 .overviewWrapper {
 	display: grid;
-	min-height: 100vh;
-	grid-template-areas: 'routes body';
+	grid-template-areas: 'routes header'
+												'routes body';
 	grid-template-columns: 0.1fr 0.9fr;
+}
+
+.overviewHeader {
+	grid-area: header;
 }
 
 .overviewBody {
