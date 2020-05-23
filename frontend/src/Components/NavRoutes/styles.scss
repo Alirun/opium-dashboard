@@ -1,0 +1,26 @@
+@import '../../Styles/constants.scss';
+
+.routesWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.navLink {
+  width: 100%;
+  border-bottom: 1px solid;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color('gray1') !important;
+}
+
+.active {
+  background-color: color('gray5');
+}
+
+.logo {
+  height: 2.5rem;
+  width: auto;
+}
