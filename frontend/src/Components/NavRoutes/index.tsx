@@ -6,19 +6,13 @@ import Logo from '../../Img/logo.jpeg'
 
 import './styles.scss'
 
-type Props = {
-  activeTab: string,
-  additionalClassName: string
-}
-
 type State = {
 }
 
-class NavRoutes extends Component<Props, State> {
+class NavRoutes extends Component<State> {
 
 
   render () {
-    const { activeTab, additionalClassName } = this.props 
     return (
       <div className='routesWrapper'>
         <CardMedia
@@ -26,10 +20,10 @@ class NavRoutes extends Component<Props, State> {
           image={Logo}
           title="Contemplative Reptile"
         />
-        {Links.map(({ to, title }) => (
+        {Links.map(({ to, title }, index) => (
           <Link
             href={to}
-            className={`navLink ${additionalClassName} ${activeTab === to && 'active'}`}
+            className={`navLink ${window.location.pathname === to && 'active'}`}
             key={title}
             underline='none'
           >

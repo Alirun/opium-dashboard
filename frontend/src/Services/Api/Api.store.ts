@@ -1,7 +1,7 @@
 import { observable } from 'mobx'
 
 // Utils
-import { logger } from '../../Utils/logger'
+// import { logger } from '../../Utils/logger'
 
 // ApiService
 import {
@@ -10,7 +10,7 @@ import {
   wallet, WalletBalanceResponse
 } from './Requests'
 
-const log = logger('ApiStore')
+// const log = logger('ApiStore')
 
 export class ApiStore {
   @observable public meta: MetaConfigResponse | null = null

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import NavRoutes from '../../Components/NavRoutes'
 
 import './styles.scss'
 
@@ -26,7 +25,6 @@ class Overview extends Component<Props, State> {
   render () {
     return (
       <div className='overviewWrapper'>
-        <NavRoutes activeTab='/' additionalClassName='overviewRoutes' />
         <div className='overviewBody'></div>
       </div>
     )
