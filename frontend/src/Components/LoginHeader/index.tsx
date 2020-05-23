@@ -12,7 +12,7 @@ type Props = {
   additionalClassName: string
 }
 
-const LoginHeader: React.FC<Props> = (props) => {
+const LoginHeader: React.FC<Props> = (props: Props) => {
   console.log()
   return (
     <div className={`loginWrapper ${props.additionalClassName}`}>
