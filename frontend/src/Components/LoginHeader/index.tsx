@@ -8,7 +8,7 @@ import './styles.scss'
 import authStore from '../../Services/Auth/Auth.store'
 import apiStore from '../../Services/Api/Api.store'
 
-interface Props {
+type Props {
   additionalClassName: string
 }
 
