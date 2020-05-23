@@ -2,27 +2,28 @@
 
 .routesWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  border-right: 1px solid;
-  height: 100vh;
 }
 
 .navLink {
-  width: 100%;
-  border-bottom: 1px solid;
   height: 2.5rem;
   display: flex;
+  color: white !important;
   align-items: center;
   justify-content: center;
-  color: color('gray1') !important;
+  padding: 0 1rem;
+  &:hover {
+    opacity: 0.5;
+    transition: ease-out 0.3s;
+  }
 }
 
 .active {
-  background-color: color('gray5');
+  border-bottom: 1px solid;
 }
 
 .logo {
-  height: 2.5rem;
-  width: auto;
+  height: auto;
+  width: 2.5rem;
 }

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import routes from './routes'
 
+import LoginHeader from './Components/LoginHeader'
 import NotFound from './Views/NotFound'
 
 interface MatchParams {
@@ -15,6 +16,7 @@ interface MatchParams {
 const App: React.FC = () => {
   return (
     <Router>
+      <LoginHeader />
       <Switch>
         {routes.map(({ path, exact, component: Component, ...rest }) => (
           <Route

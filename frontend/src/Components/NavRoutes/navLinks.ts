@@ -1,11 +1,7 @@
 export const Links = [
   {
     to: '/',
-    title: 'Overview'
-  },
-  {
-    to: '/core',
-    title: 'Core'
+    title: 'Protocols'
   },
   {
     to: '/oracles',

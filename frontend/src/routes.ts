@@ -6,15 +6,7 @@ export default [
     path: '/',
     exact: true,
     component: loadable({
-      loader: () => import('./Views/Overview'),
-      loading: Loading
-    })
-  },
-  {
-    path: '/core',
-    exact: true,
-    component: loadable({
-      loader: () => import('./Views/Core'),
+      loader: () => import('./Views/Protocol'),
       loading: Loading
     })
   },
