@@ -4,19 +4,15 @@ export const Links = [
     title: 'Overview'
   },
   {
-    to: '/new',
-    title: 'New bond'
+    to: '/core',
+    title: 'Core'
   },
   {
-    to: '/positions',
-    title: 'Positions'
+    to: '/oracles',
+    title: 'Oracles'
   },
   {
-    to: '/orders',
-    title: 'Orders'
-  },
-  {
-    to: '/history',
-    title: 'History'
-  },
+    to: '/synthetics',
+    title: 'Synthetics'
+  }
 ]
