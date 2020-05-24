@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
+import { computed } from 'mobx'
 import {
   TableContainer,
   Table,
@@ -43,12 +44,19 @@ class Overview extends Component<Props, State> {
     }
   }
 
+  @computed
+  get positions() {
+    return apiStore.myPositions
+  }
+
   componentDidMount() {
-    apiStore.setPositions().then(() => {
-      this.setState({
-        loading: false
+    setTimeout(() => {
+      apiStore.setPositions().then(() => {
+        this.setState({
+          loading: false
+        })
       })
-    })
+    }, 500)
   }
 
   render() {
@@ -122,7 +130,7 @@ class Overview extends Component<Props, State> {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {apiStore.myPositions ? apiStore.myPositions?.map((el, index) => (
+                  {this.positions ? this.positions.filter(elem => elem.amount !== '0').map((el, index) => (
                     <TableRow key={index}>
                       <TableCell align="left">{el.tokenId.id}</TableCell>
                       <TableCell align="center">{el.tokenId.type}</TableCell>
