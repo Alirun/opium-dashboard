@@ -10,8 +10,6 @@ type State = {
 }
 
 class NavRoutes extends Component<State> {
-
-
   render () {
     return (
       <div className='routesWrapper'>
