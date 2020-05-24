@@ -110,7 +110,7 @@ class Overview extends Component<Props, State> {
         </div>
         <div className='myPositionsWrapper'>
           <div className='protocolHeader'>My Positions</div>
-          {!authStore.loggedIn ? <div className='myPositionLogin'>PLease login</div> :
+          {!authStore.loggedIn ? <div className='myPositionLogin'>Please login</div> :
             <TableContainer className='positionsTableContainer' component={Paper}>
               <Table aria-label="simple table">
                 <TableHead>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, CardMedia } from '@material-ui/core'
 
 import { Links } from './navLinks'
-import Logo from '../../Img/logo.jpeg'
+import Logo from '../../Img/logo.png'
 
 import './styles.scss'
 
