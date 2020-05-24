@@ -9,8 +9,10 @@ const apiVersion = process.env.REACT_APP_API_VERSION || 'v1'
 const apiBase = process.env.REACT_APP_API_ENDPOINT || 'api-stage-trade.theart.exchange'
 const https = process.env.REACT_APP_SSL_ENABLED === 'false' ? 'http' : 'https'
 const wss = process.env.REACT_APP_SSL_ENABLED === 'false' ? 'ws' : 'wss'
+const theGraphApi = process.env.REACT_APP_THEGRAPH_ENDPOINT || 'api.thegraph.com/subgraphs/name/opiumprotocol/opium-network'
 
 const endpoint = `${https}://${apiBase}/${apiVersion}`
+const theGraphEndpoint = `${https}://${theGraphApi}`
 
 const isProduction = namespace === 'production'
 
@@ -64,6 +66,7 @@ export default {
     wss,
 
     endpoint,
+    theGraphEndpoint,
   },
 
   blockchain: {
