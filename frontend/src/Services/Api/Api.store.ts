@@ -1,5 +1,6 @@
 import { observable } from 'mobx'
 import Web3 from 'web3'
+import _debounce from 'lodash/debounce'
 
 // Utils
 import blockchainStore from '../Blockchain/Blockchain.store'
@@ -66,7 +67,11 @@ export class ApiStore {
   }
 
   public async setPositions() {
-    this.myPositions = await getPositions(blockchainStore.address)
+    if ( blockchainStore.address) {
+      this.myPositions = await getPositions(blockchainStore.address)
+    } else {
+      _debounce(this.setPositions, 500)()
+    }
   }
 
   public async setChainLinkOracle() {

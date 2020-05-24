@@ -1,7 +1,7 @@
 export const Links = [
   {
     to: '/',
-    title: 'Protocols'
+    title: 'Protocol'
   },
   {
     to: '/oracles',
