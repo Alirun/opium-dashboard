@@ -24,8 +24,8 @@ class Overview extends Component<Props, State> {
 
   render () {
     return (
-      <div className='overviewWrapper'>
-        <div className='overviewBody'></div>
+      <div className='syntheticsWrapper'>
+        <div className='comingSoon'>Coming soon</div>
       </div>
     )
   }
