@@ -2,6 +2,7 @@ import { observable } from 'mobx'
 import Web3 from 'web3'
 
 // Utils
+import blockchainStore from '../Blockchain/Blockchain.store'
 // import { logger } from '../../Utils/logger'
 
 // ApiService
@@ -12,6 +13,8 @@ import {
   MyPosition, getPositions,
   getChainLinkOracle
 } from './Requests'
+
+
 
 // const log = logger('ApiStore')
 
@@ -63,11 +66,11 @@ export class ApiStore {
   }
 
   public async setPositions() {
-    this.myPositions = await getPositions()
+    this.myPositions = await getPositions(blockchainStore.address)
   }
 
   public async setChainLinkOracle() {
-    this.myChainLinkOracle = Web3.utils.fromWei(await getChainLinkOracle(), 'ether')
+    this.myChainLinkOracle = (1/Number(Web3.utils.fromWei(await getChainLinkOracle(), 'ether'))).toFixed(2)
   }
 }
 

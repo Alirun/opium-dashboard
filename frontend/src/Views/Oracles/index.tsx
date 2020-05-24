@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import apiStore from '../../Services/Api/Api.store'
-
+import { Card, CardMedia, CardContent, Typography, Link, Grid } from '@material-ui/core'
 import './styles.scss'
+
+import apiStore from '../../Services/Api/Api.store'
 import Loading from '../../Components/Loading'
+import ChainLinkLogo from '../../Img/chainlinkLogo.png'
 
 type Props = {}
 
@@ -11,14 +13,14 @@ type State = {
 }
 
 class Overview extends Component<Props, State> {
-  constructor (props: Props) {
+  constructor(props: Props) {
     super(props)
     this.state = {
       loading: true
     }
   }
-  
-  componentDidMount () {
+
+  componentDidMount() {
     apiStore.setChainLinkOracle().then(() => {
       this.setState({
         loading: false
@@ -26,7 +28,7 @@ class Overview extends Component<Props, State> {
     })
   }
 
-  render () {
+  render() {
     const { myChainLinkOracle } = apiStore
     const { loading } = this.state
 
@@ -34,9 +36,31 @@ class Overview extends Component<Props, State> {
       return <Loading />
     }
     return (
-      <div className='overviewWrapper'>
-        <div className='overviewBody'></div>
-        <div>{myChainLinkOracle}</div>
+      <div className='oraclesWrapper'>
+        <Grid 
+          item 
+          xs={4}
+          direction="column"
+          alignItems="center"
+          justify="center"
+        >
+          <Card className='oraclesCardWrapper'>
+            <CardMedia
+              className='oracleLogo'
+              image={ChainLinkLogo}
+              title="ChainLink"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                  1ETH = {myChainLinkOracle}DAI
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                  Source: 
+                <Link target='_blank' href='https://feeds.chain.link/dai-eth' className='oracleLink'>Chainlink</Link>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
       </div>
     )
   }

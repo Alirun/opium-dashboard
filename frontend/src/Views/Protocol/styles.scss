@@ -1,7 +1,9 @@
 @import '../../Styles/constants.scss';
 
 .protocolWrapper {
-  padding: 0 3rem 3rem;
+	padding: 0 3rem 3rem;
+	background-color: #f5f5f5;
+	min-height: 90vh;
 }
 
 .protocolRoot {
@@ -11,7 +13,7 @@
 }
 
 .protocolHeader {
-	margin: 3rem 2rem 1rem;
+	padding: 3rem 2rem 1rem;
   font-size: fz(xl);
 }
 

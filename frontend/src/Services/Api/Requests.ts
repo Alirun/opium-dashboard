@@ -78,10 +78,10 @@ export type MyPosition = {
 }
 
 
-export const getPositions = async () => {
+export const getPositions = async (address: string) => {
   const query = `
     { 
-      user(id: "0x84e94f8032b3f9fec34ee05f192ad57003337988") {
+      user(id: "${address}") {
         positions {
           tokenId {
             id
@@ -97,7 +97,10 @@ export const getPositions = async () => {
     `
 
   const res = await axios.post(config.api.theGraphOpiumEndpoint, {query})
-  return res.data.data.user.positions
+  if ( res.data.data.user ) {
+    return res.data.data.user.positions
+  }
+  return
 }
 
 export const getChainLinkOracle = async () => {

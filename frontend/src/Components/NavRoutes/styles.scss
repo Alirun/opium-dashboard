@@ -3,7 +3,8 @@
 .routesWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .navLink {
@@ -24,6 +25,8 @@
 }
 
 .logo {
-  height: auto;
-  width: 2.5rem;
+  height: 10vh;
+  width: 10rem;
+  margin-right: 2rem;
+  cursor: pointer;
 }
