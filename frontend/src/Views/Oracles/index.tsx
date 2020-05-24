@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import apiStore from '../../Services/Api/Api.store'
 
 import './styles.scss'
 
@@ -17,15 +18,20 @@ class Overview extends Component<Props, State> {
   }
   
   componentDidMount () {
-    this.setState({
-      loading: false
+    apiStore.setChainLinkOracle().then(() => {
+      this.setState({
+        loading: false
+      })
     })
   }
 
   render () {
+    const { myChainLinkOracle } = apiStore
     return (
       <div className='overviewWrapper'>
         <div className='overviewBody'></div>
+        <div>{myChainLinkOracle}</div>
+        <div>sth</div>
       </div>
     )
   }
