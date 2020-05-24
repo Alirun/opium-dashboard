@@ -31,8 +31,12 @@
 .protocolGraphWrap {
 	display: flex;
 	flex-direction: row;
-
 }
+
 .protocolChart > svg{
 	width: 400px !important;
+}
+
+.protocolTable {
+	width: 850px;
 }

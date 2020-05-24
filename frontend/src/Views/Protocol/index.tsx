@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Box, Typography, Card, CardContent } from '@material-ui/core'
+import { Button, Box, Typography, Card, CardContent, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper } from '@material-ui/core'
 // @tsignor 
 import { LineChart } from 'react-charts-d3'
 import './styles.scss'
@@ -13,6 +13,29 @@ const data = [
   { key: 'Group 1', values: [ { x: 'A', y: 23 }, { x: 'B', y: 8 } ] },
   { key: 'Group 2', values: [ { x: 'A', y: 15 }, { x: 'B', y: 37 } ] },
 ]
+
+const rows = [
+  {
+    tokenId: '123123',
+    position: 'long',
+    amount: 1123123
+  },
+  {
+    tokenId: '12323',
+    position: 'long',
+    amount: 1123123
+  },
+  {
+    tokenId: '1231123',
+    position: 'long',
+    amount: 1123123
+  },
+  {
+    tokenId: '1231223',
+    position: 'long',
+    amount: 1123123
+  }
+];
 class Overview extends Component<Props, State> {
   constructor (props: Props) {
     super(props)
@@ -79,6 +102,50 @@ class Overview extends Component<Props, State> {
               </CardContent>
             </Card>
           </div>
+          <div className='protocolHeader'>
+            Positions
+          </div>
+          <Card className='protocolTotalLocked'>
+            <Typography variant="body2" component="p">
+              Tikers: total
+            </Typography>
+            <Typography variant="body2" component="p">
+              Long positions: total
+            </Typography>
+            <Typography variant="body2" component="p">
+              Short positions: total
+            </Typography>
+            <Typography variant="body2" component="p">
+              Users: total
+            </Typography>
+          </Card>
+          <div className='protocolHeader'>
+            My Positions
+          </div>
+          <TableContainer>
+            <Table className='protocolTable' size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>TokenId</TableCell>
+                  <TableCell align="right">Position</TableCell>
+                  <TableCell align="right">Amount</TableCell>
+                  <TableCell align="right"></TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow key={row.tokenId}>
+                    <TableCell component="th" scope="row">
+                      {row.tokenId}
+                    </TableCell>
+                    <TableCell align="right">{row.position}</TableCell>
+                    <TableCell align="right">{row.amount}</TableCell>
+                    <TableCell align="right"><Button>Execute</Button></TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </div>
       </div>
     )
