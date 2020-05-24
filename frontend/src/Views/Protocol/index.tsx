@@ -10,12 +10,7 @@ import {
   TableBody,
   Paper,
   Link,
-  Typography,
-  Card,
-  CardContent
 } from '@material-ui/core'
-
-import { AreaChart } from 'react-charts-d3'
 
 import './styles.scss'
 
@@ -31,10 +26,10 @@ type Props = {}
 type State = {
   loading: boolean
 }
-const data = [
-  { key: 'Group 1', values: [{ x: 'A', y: 23 }, { x: 'B', y: 8 }] },
-  { key: 'Group 2', values: [{ x: 'A', y: 15 }, { x: 'B', y: 37 }] },
-]
+// const data = [
+//   { key: 'Group 1', values: [{ x: 'A', y: 23 }, { x: 'B', y: 8 }] },
+//   { key: 'Group 2', values: [{ x: 'A', y: 15 }, { x: 'B', y: 37 }] },
+// ]
 
 class Overview extends Component<Props, State> {
   constructor(props: Props) {
@@ -68,13 +63,13 @@ class Overview extends Component<Props, State> {
 
     return (
       <div className='protocolWrapper'>
-        <div className='protocolHeader'>
+        {/* <div className='protocolHeader'>
           Margin Locked
         </div>
         <Card className='protocolMarginTotalLocked'>
           Total: 3800 USD
-        </Card>
-        <div className='protocolGraphWrap'>
+        </Card> */}
+        {/* <div className='protocolGraphWrap'>
           <AreaChart className='protocolChart' data={data} />
           <Card className='protocolRoot'>
             <CardContent>
@@ -115,7 +110,7 @@ class Overview extends Component<Props, State> {
               </Typography>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
         <div className='myPositionsWrapper'>
           <div className='protocolHeader'>My Positions</div>
           {!authStore.loggedIn ? <div className='myPositionLogin'>Please login</div> :

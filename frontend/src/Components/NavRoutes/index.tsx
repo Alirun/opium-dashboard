@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, CardMedia } from '@material-ui/core'
+import { Link } from '@material-ui/core'
 
 import { Links } from './navLinks'
 import Logo from '../../Img/logo.png'
@@ -14,10 +14,10 @@ class NavRoutes extends Component<State> {
     return (
       <div className='routesWrapper'>
         <Link href='/'>
-          <CardMedia
+          <img
             className='logo'
-            image={Logo}
-            title="Contemplative Reptile"
+            src={Logo}
+            alt=''
           />
         </Link>
         {Links.map(({ to, title }, index) => (
