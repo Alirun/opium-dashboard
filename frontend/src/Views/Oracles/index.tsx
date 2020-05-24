@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import apiStore from '../../Services/Api/Api.store'
 
 import './styles.scss'
+import Loading from '../../Components/Loading'
 
 type Props = {}
 
@@ -17,15 +19,24 @@ class Overview extends Component<Props, State> {
   }
   
   componentDidMount () {
-    this.setState({
-      loading: false
+    apiStore.setChainLinkOracle().then(() => {
+      this.setState({
+        loading: false
+      })
     })
   }
 
   render () {
+    const { myChainLinkOracle } = apiStore
+    const { loading } = this.state
+
+    if (loading) {
+      return <Loading />
+    }
     return (
       <div className='overviewWrapper'>
         <div className='overviewBody'></div>
+        <div>{myChainLinkOracle}</div>
       </div>
     )
   }

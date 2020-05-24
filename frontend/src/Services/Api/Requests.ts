@@ -96,6 +96,22 @@ export const getPositions = async () => {
     }
     `
 
-  const res = await axios.post(config.api.theGraphEndpoint, {query})
+  const res = await axios.post(config.api.theGraphOpiumEndpoint, {query})
   return res.data.data.user.positions
+}
+
+export const getChainLinkOracle = async () => {
+  const query = `
+  {
+    updatedAnswers(
+      where: { contract: "0x037e8f2125bf532f3e228991e051c8a7253b642c"}
+      orderBy: roundId,
+      orderDirection: desc
+    ) {
+      current
+    }
+  }
+  `
+  const res = await axios.post(config.api.theGraphChainLinkEndpoint, {query})
+  return res.data.data.updatedAnswers[0].current
 }

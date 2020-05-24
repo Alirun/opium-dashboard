@@ -1,4 +1,5 @@
 import { observable } from 'mobx'
+import Web3 from 'web3'
 
 // Utils
 // import { logger } from '../../Utils/logger'
@@ -8,7 +9,8 @@ import {
   meta, MetaConfigResponse,
   auth,
   wallet, WalletBalanceResponse,
-  MyPosition, getPositions
+  MyPosition, getPositions,
+  getChainLinkOracle
 } from './Requests'
 
 // const log = logger('ApiStore')
@@ -19,8 +21,9 @@ export class ApiStore {
 
   @observable public accessToken: string = ''
   @observable public ttl: number = Number.MAX_SAFE_INTEGER
-
+  
   @observable public myPositions: MyPosition[] | null = null
+  @observable public myChainLinkOracle: string | null = null
 
   public async init() {
     this.meta = await meta.get()
@@ -61,6 +64,10 @@ export class ApiStore {
 
   public async setPositions() {
     this.myPositions = await getPositions()
+  }
+
+  public async setChainLinkOracle() {
+    this.myChainLinkOracle = Web3.utils.fromWei(await getChainLinkOracle(), 'ether')
   }
 }
 
