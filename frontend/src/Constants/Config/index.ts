@@ -77,6 +77,9 @@ export default {
   wallet: {
     fortmatic: {
       key: isProduction ? '' : ''
+    },
+    portis: {
+      id: '6e0b2b0c-b666-428c-a26a-a000ba40b8b3'
     }
   }
 }

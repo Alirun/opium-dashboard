@@ -3,6 +3,7 @@ import { observable, computed, action } from 'mobx'
 
 // @ts-ignore
 import WalletConnectProvider from '@walletconnect/web3-provider'
+import Portis from '@portis/web3'
 import Fortmatic from 'fortmatic'
 import Web3 from 'web3'
 import { Subscription } from 'web3-core-subscriptions'
@@ -19,6 +20,7 @@ export enum ProviderName {
   WalletConnect = 'WalletConnect',
   Trust = 'Trust',
   Fortmatic = 'Fortmatic',
+  Portis = 'Portis',
   Cipher = 'Cipher', // Crashes
   Coinbase = 'Coinbase', // Doesn't support
   Dapper = 'Dapper', // Doesn't support
@@ -94,6 +96,12 @@ export class Blockchain {
           options: {
             key: config.wallet.fortmatic.key
           }
+        },
+        portis: {
+          package: Portis,
+          options: {
+            id: config.wallet.portis.id
+          }
         }
       }
     })
@@ -160,6 +168,7 @@ export class Blockchain {
     switch (this.providerName) {
       case ProviderName.MetaMask:
       case ProviderName.Fortmatic:
+      case ProviderName.Portis:
         signature = await this._signTypedDataV3(data, signer)
         break
       case ProviderName.Cipher:
