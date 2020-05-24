@@ -119,33 +119,6 @@ class Overview extends Component<Props, State> {
               Users: total
             </Typography>
           </Card>
-          <div className='protocolHeader'>
-            My Positions
-          </div>
-          <TableContainer>
-            <Table className='protocolTable' size="small" aria-label="a dense table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>TokenId</TableCell>
-                  <TableCell align="right">Position</TableCell>
-                  <TableCell align="right">Amount</TableCell>
-                  <TableCell align="right"></TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row) => (
-                  <TableRow key={row.tokenId}>
-                    <TableCell component="th" scope="row">
-                      {row.tokenId}
-                    </TableCell>
-                    <TableCell align="right">{row.position}</TableCell>
-                    <TableCell align="right">{row.amount}</TableCell>
-                    <TableCell align="right"><Button>Execute</Button></TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
         </div>
       </div>
     )
