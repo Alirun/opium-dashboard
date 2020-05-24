@@ -1,4 +1,4 @@
-import { observable } from 'mobx'
+import { observable, action } from 'mobx'
 import Web3 from 'web3'
 import _debounce from 'lodash/debounce'
 
@@ -66,11 +66,12 @@ export class ApiStore {
     return this.ttl < ~~(Date.now() / 1000)
   }
 
+  @action
   public async setPositions() {
     if ( blockchainStore.address) {
       this.myPositions = await getPositions(blockchainStore.address)
     } else {
-      _debounce(this.setPositions, 500)()
+      await _debounce(this.setPositions, 500)()
     }
   }
 
