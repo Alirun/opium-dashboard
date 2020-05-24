@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Box, Typography, Card, CardContent } from '@material-ui/core'
-//@tsignor 
-import { LineChart } from 'react-charts-d3';
+// @tsignor 
+import { LineChart } from 'react-charts-d3'
 import './styles.scss'
 
 type Props = {}
@@ -12,7 +12,7 @@ type State = {
 const data = [
   { key: 'Group 1', values: [ { x: 'A', y: 23 }, { x: 'B', y: 8 } ] },
   { key: 'Group 2', values: [ { x: 'A', y: 15 }, { x: 'B', y: 37 } ] },
-];
+]
 class Overview extends Component<Props, State> {
   constructor (props: Props) {
     super(props)
