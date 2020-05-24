@@ -1,0 +1,29 @@
+.protocolroot {
+	margin: 1rem;
+	width: 180px;
+}
+
+.protocolbullet {
+	display: inline-block;
+	margin: 0px 2px;
+}
+
+.protocoltitle {
+	font-size: 14px;
+}
+
+.protocolpos {
+	margin-bottom: 12px;
+}
+
+.protocolTotalLocked {
+	width: 200px;
+	margin: 1rem 0;
+	padding: 1rem 0.5rem;
+}
+
+.protocolGraphWrap {
+	display: flex;
+	flex-direction: row;
+
+}

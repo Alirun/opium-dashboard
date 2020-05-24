@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button, Box, Typography, Card, CardContent } from '@material-ui/core'
 
 import './styles.scss'
 
@@ -25,7 +26,55 @@ class Overview extends Component<Props, State> {
   render () {
     return (
       <div className='overviewWrapper'>
-        <div className='overviewBody'></div>
+        <div className='overviewBody'>
+          <div className='protocolHeader'>
+            Margin Locked
+          </div>
+          <Card className='protocolTotalLocked'>
+            Total: 3800 USD
+          </Card>
+          <div className='protocolGraphWrap'>
+            <Card className='protocolroot'>
+              <CardContent>
+                <Typography className='protocoltitle' color="textSecondary" gutterBottom>
+                  DAI
+                </Typography>
+                <Typography variant="body2" component="p">
+                  Total: total
+                </Typography>
+                <Typography variant="body2" component="p">
+                  USD: total
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card className='protocolroot'>
+              <CardContent>
+                <Typography className='protocoltitle' color="textSecondary" gutterBottom>
+                  DAI
+                </Typography>
+                <Typography variant="body2" component="p">
+                  Total: total
+                </Typography>
+                <Typography variant="body2" component="p">
+                  USD: total
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card className='protocolroot'>
+              <CardContent>
+                <Typography className='protocoltitle' color="textSecondary" gutterBottom>
+                  DAI
+                </Typography>
+                <Typography variant="body2" component="p">
+                  Total: total
+                </Typography>
+                <Typography variant="body2" component="p">
+                  USD: total
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     )
   }
