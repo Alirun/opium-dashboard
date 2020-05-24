@@ -13,7 +13,7 @@ class NavRoutes extends Component<State> {
   render () {
     return (
       <div className='routesWrapper'>
-        <Link href='/'>
+        <Link href='#/'>
           <img
             className='logo'
             src={Logo}

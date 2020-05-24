@@ -1,14 +1,14 @@
 export const Links = [
   {
-    to: '/',
+    to: '#/',
     title: 'Protocol'
   },
   {
-    to: '/oracles',
+    to: '#/oracles',
     title: 'Oracles'
   },
   {
-    to: '/synthetics',
+    to: '#/synthetics',
     title: 'Synthetics'
   }
 ]
