@@ -6,7 +6,7 @@ const namespace = process.env.REACT_APP_NAMESPACE || 'development'
 
 // Api Env
 const apiVersion = process.env.REACT_APP_API_VERSION || 'v1'
-const apiBase = process.env.REACT_APP_API_ENDPOINT || 'api-stage-trade.theart.exchange'
+const apiBase = process.env.REACT_APP_API_ENDPOINT || 'api.swaprate.finance'
 const https = process.env.REACT_APP_SSL_ENABLED === 'false' ? 'http' : 'https'
 const wss = process.env.REACT_APP_SSL_ENABLED === 'false' ? 'ws' : 'wss'
 const theGraphApi = process.env.REACT_APP_THEGRAPH_ENDPOINT || 'api.thegraph.com/subgraphs/name/opiumprotocol/opium-network'
