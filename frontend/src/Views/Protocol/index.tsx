@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Box, Typography, Card, CardContent, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper } from '@material-ui/core'
 // @tsignor 
-import { LineChart } from 'react-charts-d3'
+import { AreaChart } from 'react-charts-d3'
 import './styles.scss'
 
 type Props = {}
@@ -61,7 +61,7 @@ class Overview extends Component<Props, State> {
             Total: 3800 USD
           </Card>
           <div className='protocolGraphWrap'>
-            <LineChart className='protocolChart' data={data} />
+            <AreaChart className='protocolChart' data={data} />
             <Card className='protocolroot'>
               <CardContent>
                 <Typography className='protocoltitle' color="textSecondary" gutterBottom>
