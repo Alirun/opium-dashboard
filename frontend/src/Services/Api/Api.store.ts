@@ -59,7 +59,7 @@ export class ApiStore {
     return this.ttl < ~~(Date.now() / 1000)
   }
 
-   public async setPositions() {
+  public async setPositions() {
     this.myPositions = await getPositions()
   }
 }

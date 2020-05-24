@@ -15,7 +15,7 @@ import './styles.scss'
 import authStore from '../../Services/Auth/Auth.store'
 import apiStore from '../../Services/Api/Api.store'
 
-//Components 
+// Components 
 import Loading from '../../Components/Loading'
 
 type Props = {}
@@ -53,29 +53,29 @@ class Overview extends Component<Props, State> {
           <div>My Positions</div>
           {!authStore.loggedIn ? <div>PLease login</div> :
             <TableContainer className='positionsTableContainer' component={Paper}>
-                <Table aria-label="simple table">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>TokenID</TableCell>
-                      <TableCell align="right">Position</TableCell>
-                      <TableCell align="right">Amount</TableCell>
-                      <TableCell align="right">Explore</TableCell>
+              <Table aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>TokenID</TableCell>
+                    <TableCell align="right">Position</TableCell>
+                    <TableCell align="right">Amount</TableCell>
+                    <TableCell align="right">Explore</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {apiStore.myPositions?.map((el, index) => (
+                    <TableRow key={index}>
+                      <TableCell component="th" scope="row">
+                        {el.tokenId.id}
+                      </TableCell>
+                      <TableCell align="center">{el.tokenId.type}</TableCell>
+                      <TableCell align="center">{el.amount}</TableCell>
+                      <TableCell align="center"><Link target="_blank" href={`https://trade.opium.exchange/derivatives/${el.tokenId.ticker?.id}`}>Explore</Link></TableCell>
                     </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {apiStore.myPositions?.map((el, index) => (
-                      <TableRow key={index}>
-                        <TableCell component="th" scope="row">
-                          {el.tokenId.id}
-                        </TableCell>
-                        <TableCell align="center">{el.tokenId.type}</TableCell>
-                        <TableCell align="center">{el.amount}</TableCell>
-                        <TableCell align="center"><Link target="_blank" href={`https://trade.opium.exchange/derivatives/${el.tokenId.ticker?.id}`}>Explore</Link></TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           }
         </div>
       </div>
