@@ -1,6 +1,6 @@
 {
-  "short_name": "opium.smart.bonds",
-  "name": "Opium Smart Bonds",
+  "short_name": "dashboard.opium.network",
+  "name": "Opium Network Dashboard",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
