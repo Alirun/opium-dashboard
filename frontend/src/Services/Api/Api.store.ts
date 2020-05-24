@@ -66,8 +66,8 @@ export class ApiStore {
     this.myPositions = await getPositions()
   }
 
-  public async setChainLinkOracle() {{
-    this.myChainLinkOracle = Web3.utils.fromWei(await getChainLinkOracle(), 'ether')}
+  public async setChainLinkOracle() {
+    this.myChainLinkOracle = Web3.utils.fromWei(await getChainLinkOracle(), 'ether')
   }
 }
 
