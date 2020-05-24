@@ -7,7 +7,8 @@ import { observable } from 'mobx'
 import {
   meta, MetaConfigResponse,
   auth,
-  wallet, WalletBalanceResponse
+  wallet, WalletBalanceResponse,
+  MyPosition, getPositions
 } from './Requests'
 
 // const log = logger('ApiStore')
@@ -18,6 +19,8 @@ export class ApiStore {
 
   @observable public accessToken: string = ''
   @observable public ttl: number = Number.MAX_SAFE_INTEGER
+
+  @observable public myPositions: MyPosition[] | null = null
 
   public async init() {
     this.meta = await meta.get()
@@ -54,6 +57,10 @@ export class ApiStore {
 
   public isAccessTokenExpired() {
     return this.ttl < ~~(Date.now() / 1000)
+  }
+
+   public async setPositions() {
+    this.myPositions = await getPositions()
   }
 }
 

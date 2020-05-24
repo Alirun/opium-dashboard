@@ -1,8 +1,9 @@
 // ApiService
 import fetchResource from './fetchResource'
-
+import config from '../../Constants/Config'
 // Constants
 import { EIP712Message } from '../../Constants/Types/blockchain'
+import axios from 'axios'
 
 // Meta
 export type SupportedToken = {
@@ -56,4 +57,45 @@ type AuthLoginDataResponse = {
 export const auth = {
   get: (): Promise<AuthLoginDataResponse> =>
     fetchResource('auth/loginData'),
+}
+
+
+// theGraph
+
+enum PositionType {
+  SHORT = 'SHORT',
+  LONG = 'LONG'
+}
+
+type TokenId = {
+  id: string
+  type: PositionType
+  ticker: { id: string } | null
+}
+export type MyPosition = {
+  amount: string
+  tokenId: TokenId
+}
+
+
+export const getPositions = async () => {
+  const query = `
+    { 
+      user(id: "0x84e94f8032b3f9fec34ee05f192ad57003337988") {
+        positions {
+          tokenId {
+            id
+            type
+            ticker {
+              id
+            }
+          }
+          amount
+        }
+      }
+    }
+    `
+
+  const res = await axios.post(config.api.theGraphEndpoint, {query})
+  return res.data.data.user.positions
 }
