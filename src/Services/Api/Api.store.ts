@@ -15,8 +15,6 @@ import {
   getChainLinkOracle
 } from './Requests'
 
-
-
 // const log = logger('ApiStore')
 
 export class ApiStore {
@@ -68,10 +66,8 @@ export class ApiStore {
 
   @action
   public async setPositions() {
-    if ( blockchainStore.address) {
+    if (blockchainStore.address.length) {
       this.myPositions = await getPositions(blockchainStore.address)
-    } else {
-      await _debounce(this.setPositions, 500)()
     }
   }
 

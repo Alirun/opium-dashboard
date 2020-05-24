@@ -1,4 +1,4 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, autorun } from 'mobx'
 
 // Utils
 import { logger } from '../../Utils/logger'
@@ -28,6 +28,11 @@ export class AuthStore {
 
   constructor() {
     blockchainStore.registerCallbacks(this._sessionLoadedCallback, this._sessionPreparationCallback, this.logout)
+    autorun(() => {
+      if (this.loggedIn && !apiStore.myPositions) {
+        apiStore.setPositions()
+      }
+    })
   }
 
   public login = () => {

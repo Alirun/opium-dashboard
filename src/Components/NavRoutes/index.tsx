@@ -23,7 +23,7 @@ class NavRoutes extends Component<State> {
         {Links.map(({ to, title }, index) => (
           <Link
             href={to}
-            className={`navLink ${window.location.pathname === to && 'active'}`}
+            className={`navLink ${window.location.hash === to && 'active'}`}
             key={title}
             underline='none'
           >

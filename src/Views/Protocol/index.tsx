@@ -44,23 +44,7 @@ class Overview extends Component<Props, State> {
     return apiStore.myPositions
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      apiStore.setPositions().then(() => {
-        this.setState({
-          loading: false
-        })
-      })
-    }, 500)
-  }
-
   render() {
-    const { loading } = this.state
-
-    if (loading) {
-      return <Loading />
-    }
-
     return (
       <div className='protocolWrapper'>
         {/* <div className='protocolHeader'>
