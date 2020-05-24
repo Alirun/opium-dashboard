@@ -3,6 +3,11 @@
 	width: 180px;
 }
 
+.protocolHeader {
+	margin: 1rem;
+	font-size: 2rem;
+}
+
 .protocolbullet {
 	display: inline-block;
 	margin: 0px 2px;
@@ -18,7 +23,7 @@
 
 .protocolTotalLocked {
 	width: 200px;
-	margin: 1rem 0;
+	margin: 1rem;
 	padding: 1rem 0.5rem;
 }
 
@@ -26,4 +31,7 @@
 	display: flex;
 	flex-direction: row;
 
+}
+.protocolChart > svg{
+	width: 400px !important;
 }
