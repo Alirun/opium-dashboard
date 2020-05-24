@@ -35,7 +35,7 @@ const rows = [
     position: 'long',
     amount: 1123123
   }
-];
+]
 class Overview extends Component<Props, State> {
   constructor (props: Props) {
     super(props)
