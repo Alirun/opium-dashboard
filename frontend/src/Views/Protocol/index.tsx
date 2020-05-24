@@ -108,23 +108,6 @@ class Overview extends Component<Props, State> {
             </CardContent>
           </Card>
         </div>
-        <div className='protocolHeader'>
-          Positions
-        </div>
-        <Card className='protocolTotalLocked'>
-          <Typography variant="body2" component="p">
-            Tickers: total
-          </Typography>
-          <Typography variant="body2" component="p">
-            Long positions: total
-          </Typography>
-          <Typography variant="body2" component="p">
-            Short positions: total
-          </Typography>
-          <Typography variant="body2" component="p">
-            Users: total
-          </Typography>
-        </Card>
         <div className='myPositionsWrapper'>
           <div className='protocolHeader'>My Positions</div>
           {!authStore.loggedIn ? <div className='myPositionLogin'>PLease login</div> :
@@ -139,14 +122,14 @@ class Overview extends Component<Props, State> {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {apiStore.myPositions?.map((el, index) => (
+                  {apiStore.myPositions ? apiStore.myPositions?.map((el, index) => (
                     <TableRow key={index}>
                       <TableCell align="left">{el.tokenId.id}</TableCell>
                       <TableCell align="center">{el.tokenId.type}</TableCell>
                       <TableCell align="center">{el.amount}</TableCell>
                       <TableCell align="center"><Link target="_blank" href={`https://trade.opium.exchange/derivatives/${el.tokenId.ticker?.id}`}>Explore</Link></TableCell>
                     </TableRow>
-                  ))}
+                  )) : <div className='myPositionLogin'>You do not have any position yet. Go to <Link href="https://trade.opium.exchange/" target="_blank" >Opium.Exchange</Link> to create one</div>}
                 </TableBody>
               </Table>
             </TableContainer>

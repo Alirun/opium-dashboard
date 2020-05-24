@@ -13,11 +13,13 @@ class NavRoutes extends Component<State> {
   render () {
     return (
       <div className='routesWrapper'>
-        <CardMedia
-          className='logo'
-          image={Logo}
-          title="Contemplative Reptile"
-        />
+        <Link href='/'>
+          <CardMedia
+            className='logo'
+            image={Logo}
+            title="Contemplative Reptile"
+          />
+        </Link>
         {Links.map(({ to, title }, index) => (
           <Link
             href={to}
