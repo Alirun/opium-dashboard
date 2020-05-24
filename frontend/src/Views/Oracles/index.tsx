@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import apiStore from '../../Services/Api/Api.store'
 
 import './styles.scss'
+import Loading from '../../Components/Loading'
 
 type Props = {}
 
@@ -27,11 +28,15 @@ class Overview extends Component<Props, State> {
 
   render () {
     const { myChainLinkOracle } = apiStore
+    const { loading } = this.state
+
+    if (loading) {
+      return <Loading />
+    }
     return (
       <div className='overviewWrapper'>
         <div className='overviewBody'></div>
         <div>{myChainLinkOracle}</div>
-        <div>sth</div>
       </div>
     )
   }

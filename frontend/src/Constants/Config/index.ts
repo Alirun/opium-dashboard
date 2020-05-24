@@ -10,7 +10,7 @@ const apiBase = process.env.REACT_APP_API_ENDPOINT || 'api-stage-trade.theart.ex
 const https = process.env.REACT_APP_SSL_ENABLED === 'false' ? 'http' : 'https'
 const wss = process.env.REACT_APP_SSL_ENABLED === 'false' ? 'ws' : 'wss'
 const theGraphApi = process.env.REACT_APP_THEGRAPH_ENDPOINT || 'api.thegraph.com/subgraphs/name/opiumprotocol/opium-network'
-const chainLinkApi = 'api.thegraph.com/subgraphs/name/jesseabram/chainlink-aggregators'
+const chainLinkApi = process.env.REACT_APP_CHAINLINK_ENDPOINT || 'api.thegraph.com/subgraphs/name/jesseabram/chainlink-aggregators'
 
 const endpoint = `${https}://${apiBase}/${apiVersion}`
 const theGraphOpiumEndpoint = `${https}://${theGraphApi}`
